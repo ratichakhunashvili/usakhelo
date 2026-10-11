@@ -16,6 +16,19 @@ npm run build      # typecheck + production build into dist/
 npm run preview    # serve the production build
 ```
 
+## Deploy to Vercel
+
+This project is a static Vite app and is ready for Vercel deployment without a custom server.
+
+1. Push the repository to GitHub.
+2. Import the project in Vercel.
+3. Use the default settings:
+   - Framework: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+
+A `vercel.json` file is included so SPA paths resolve correctly during deployment.
+
 Stack: React 18 + TypeScript + Vite, Leaflet (used directly, no wrapper), Inter via `@fontsource-variable/inter`.
 No router or state library: screens are driven by hash routes (`#/places`, `#/map/<id>`, `#/places/<id>/details`, `#/user`),
 so browser Back/Forward and deep links work. The map is a lazy chunk and is preloaded when the browser is idle.
